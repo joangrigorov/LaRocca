@@ -4,7 +4,7 @@ return array(
     'db-driver' => array(
         'params' => array(
             'params' => array(
-                'dbname' => 'test',
+                'dbname' => 'la_rocca',
                 'user' => 'root',
                 'password' => '',
                 'host' => 'localhost',

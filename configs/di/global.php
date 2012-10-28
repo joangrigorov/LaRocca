@@ -34,7 +34,7 @@ return array(
                 'renderer', 
                 'layout' => array(
                     'params' => array(
-                        'title' => 'Quasar Framework'
+                        'title' => 'La Rocca - Дневник на брокера'
                     )
                 )
             ),
@@ -46,14 +46,15 @@ return array(
     'Quasar\View\Renderer\Renderer' => array(
         'params' => array(
             'paths' => array(
-                ROOT_PATH . '/src/App/views/templates/'
+                ROOT_PATH . '/src/App/View/templates/'
             )
         ),
         'instances' => array(
             'Quasar\Broker\HelperBroker' => array(
                 'params' => array(
                     'namespaces' => array(
-                        'Quasar\View\Helper'
+                        'Quasar\View\Helper',
+                        'App\View\Helper'
                     )
                 )
             )

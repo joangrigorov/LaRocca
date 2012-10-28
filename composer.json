@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "quasar-framework/quasar-framework": "dev-master"
+        "quasar-framework/quasar-framework": "dev-master",
+	"breerly/zf1": "dev-master"
     },
     "autoload": {
         "psr-0": {

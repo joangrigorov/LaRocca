@@ -5,6 +5,12 @@ use Quasar\Controller\Controller;
 
 class Index extends Controller
 {
+    
+    protected function getNamespace()
+    {
+        return __NAMESPACE__;
+    }
+    
     public function execute()
     {
     }
