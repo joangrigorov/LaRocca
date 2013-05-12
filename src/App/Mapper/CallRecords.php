@@ -37,8 +37,31 @@ class CallRecords
     {
         $entity->setId(null);
         $data = $entity->toArray();
-        $entity->setId($this->gateway->insert($data));
+        $this->gateway->insert($data);
+        $entity->setId($this->gateway->lastInsertId());
         return $this;
+    }
+    
+    /**
+     * Find record call by id
+     * 
+     * @param integer $id
+     * @return \Quasar\Db\TableGateway\Row\Row|null
+     */
+    public function findById($id)
+    {
+        $select = $this->gateway->select()->where('id = ?');
+        return $this->gateway->fetchRow($select, array($id));
+    }
+    
+    /**
+     * Browse all call records
+     * 
+     * @return \Doctrine\DBAL\Query\QueryBuilder
+     */
+    public function browse()
+    {
+        return $this->gateway->fetchAll();
     }
     
 }

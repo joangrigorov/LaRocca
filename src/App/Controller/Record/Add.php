@@ -38,6 +38,10 @@ class Add extends Controller
         if ($request->isPost() && $form->isValid($request->getPost())) {
             $entity = new CallRecordEntity($form->getValues());
             $this->mapper->insert($entity);
+            $id = $entity->getId();
+            $baseUrl = dirname($_SERVER['SCRIPT_NAME']) == '/' ? '' : dirname($_SERVER['SCRIPT_NAME']);
+            header('Location: ' . $baseUrl . '/record/edit/id/' . $id);
+            exit;
         }
         
         $this->response->form = $form;

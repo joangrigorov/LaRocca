@@ -1,0 +1,17 @@
+<article class="module width_full">
+
+    <?php if (isset($this->error)) : ?>
+    <h4 class="alert_error"><?php echo $this->escape($this->error); ?></h4>
+    <br />
+    <?php else: ?>
+    <header><h3>Редактиране на запис за телефонен номер <?php echo $this->escape($this->callRecord->phone) ?></h3></header>
+    <?php endif; ?>
+    
+    
+    <?php if (isset($this->success)) : ?>
+    <h4 class="alert_success"><?php echo $this->escape($this->success); ?></h4>
+    <?php endif; ?>
+    
+    <?php echo $this->form; ?>
+
+</article><!-- end of post new article -->
