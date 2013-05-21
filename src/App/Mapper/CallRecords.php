@@ -64,4 +64,16 @@ class CallRecords
         return $this->gateway->fetchAll();
     }
     
+    /**
+     * Delete record call by id
+     * 
+     * @param integer $id
+     * @return \Quasar\Db\TableGateway\Row\Row|null
+     */
+    public function deleteById($id)
+    {
+        //$select = $this->gateway->delete()->where('id = ?');
+        return $this->gateway->delete(array('id' => $id));
+    }
+    
 }

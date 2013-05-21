@@ -22,8 +22,10 @@
 					<td><?=$record['phone']?></td>
 					<td><?=$record['name']?></td>
 					<td><?=$record['date']?></td>
-					<td><input type="image" src="images/icn_edit.png" title="Edit"><input
-						type="image" src="images/icn_trash.png" title="Trash"></td>
+                                        <td>
+                                            <a href="/record/edit/id/<?=$record['id']?>" target="_self"><input type="image" src="images/icn_edit.png" title="Edit"></a>
+                                            <a href="/record/delete/id/<?=$record['id']?>" target="_self"><input type="image" src="images/icn_trash.png" title="Trash"></a>
+                                        </td>
 				</tr>
                           <? } ?>
 			</tbody>
