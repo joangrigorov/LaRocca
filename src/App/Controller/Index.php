@@ -19,5 +19,7 @@ class Index extends Controller
             $baseUrl = dirname($_SERVER['SCRIPT_NAME']) == '/' ? '' : dirname($_SERVER['SCRIPT_NAME']);
                  header('Location: ' . $baseUrl . '/login');
         }
+        
+       $this->response->user= $defaultNamespace->user;
     }
 }

@@ -19,8 +19,16 @@ class Record extends Controller
     
     public function execute()
     {
-        $select = $this->mapper->browse();
-        $adapter = new Doctrine($select);
-        $adapter->getCountSelect();
+        $defaultNamespace = new \Zend_Session_Namespace('Logged');
+        
+        if (!isset($defaultNamespace->logged) || !isset($defaultNamespace->user)) {
+            $baseUrl = dirname($_SERVER['SCRIPT_NAME']) == '/' ? '' : dirname($_SERVER['SCRIPT_NAME']);
+                 header('Location: ' . $baseUrl . '/login');
+        }
+        
+        $this->response->user = $defaultNamespace->user;
+        
+        
+        $records = $this->mapper->browse();
     }
 }
