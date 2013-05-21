@@ -30,5 +30,6 @@ class Record extends Controller
         
         
         $records = $this->mapper->browse();
+        $this->response->records = $records;
     }
 }
